@@ -1,0 +1,26 @@
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: tomee-rs
+  labels:
+    type: appserver
+    author: Praveen
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: appserver
+  template:
+    metadata:
+      name: tomee-pod
+      labels:
+        app: appserver
+    spec:
+      containers:
+        - name: mytomee
+          image: tomee
+          ports:
+            - containerPort: 8080
+              hostPort: 8080
+...
