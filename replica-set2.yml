@@ -1,0 +1,24 @@
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: httpd-rs
+  namespace: praveen-ns
+  labels:
+    type: appserver
+    author: Praveen
+spec:
+  replicas: 6
+  selector:
+    matchLabels:
+      app: appserver
+  template:
+    metadata:
+      name: httpd-pod
+      labels:
+        app: appserver
+    spec:
+      containers:
+        - name: myhttpd
+          image: httpd
+...
