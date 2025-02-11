@@ -3,12 +3,11 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: httpd-deployment
-  namespace: praveen-ns
   labels:
     type: appserver
     author: Praveen
 spec:
-  replicas: 10
+  replicas: 3
   selector:
     matchLabels:
       type: appserver
