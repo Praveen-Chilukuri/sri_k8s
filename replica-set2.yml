@@ -3,7 +3,6 @@ apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
   name: httpd-rs
-  namespace: praveen-ns
   labels:
     type: appserver
     author: Praveen
