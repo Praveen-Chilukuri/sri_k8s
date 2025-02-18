@@ -3,7 +3,6 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: nginx-pod
-  namespace: test-ns
   labels:
     author: praveen
     type: proxy
@@ -11,8 +10,4 @@ spec:
   containers:
     - name: mynginx
       image: nginx
-      ports:
-        - containerPort: 80
-        - containerPort: 9090
-          hostPort: 9090
 ...
