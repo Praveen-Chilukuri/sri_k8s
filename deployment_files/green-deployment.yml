@@ -2,14 +2,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: green-nginx-deployment
   labels:
     type: proxy
     author: Praveen
 spec:
-  replicas: 3
-  strategy:
-    type: Recreate
+  replicas: 1
   selector:
     matchLabels:
       type: proxy
@@ -21,5 +19,5 @@ spec:
     spec:
       containers:
         - name: mynginx
-          image: nginx:1.26
+          image: nginx:1.27
 ...
